@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : CharacterScript
 {
-    bool defaultMovement = true;
+    protected bool defaultMovement = true;
 
     PlayerScript player;
 
@@ -28,8 +28,10 @@ public class EnemyScript : CharacterScript
             //Face Player
             facingRight = player.transform.position.x > transform.position.x;
 
-            //Move Closer if far away
-            if (Mathf.Abs(player.transform.position.x - transform.position.x) > 4)
+            float playerDistance = Mathf.Abs(player.transform.position.x - transform.position.x);
+
+            //Move Closer if far away or if player is pushing against
+            if (playerDistance > 4 || playerDistance < 1)
                 movementDir = Mathf.Clamp(player.transform.position.x - transform.position.x, -1, 1);
             else
                 //else waver
@@ -38,8 +40,9 @@ public class EnemyScript : CharacterScript
             //Only Blocks if close enough
             blocking = Mathf.Abs(player.transform.position.x - transform.position.x) < 6;
 
-            //Jump Randomly for Fun
-            attemptJump = Random.Range(0, 50f) < .0125f;
+            //Jump Randomly for Fun if player not close
+            if (playerDistance > 1)
+                attemptJump = Random.Range(0, 50f) < .02f;
         }
 
         //Physics Updating
