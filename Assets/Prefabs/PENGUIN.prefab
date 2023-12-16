@@ -459,7 +459,7 @@ MonoBehaviour:
   blocking: 0
   rollForce: {x: 0, y: 0}
   flingTime: 0
-  attackPenguin: 1
+  attackPenguin: 0
   keybindImages:
   - {fileID: 0}
   - {fileID: 0}
