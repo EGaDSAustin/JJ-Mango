@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
+    public Camera followingCamera;
+
     public InputActionMap actionMap;
+
+    private Vector2 pastPlayerPosition;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -32,5 +37,12 @@ public class PlayerScript : MonoBehaviour
             velocity.y = 3;
 
         rb.velocity = velocity;
+
+        if(followingCamera != null)
+        {
+            followingCamera.transform.position += transform.position - new Vector3(pastPlayerPosition.x, pastPlayerPosition.y, 0);
+        }
+
+        pastPlayerPosition = transform.position;
     }
 }

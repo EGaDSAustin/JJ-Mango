@@ -18,7 +18,7 @@ public class TextBox : MonoBehaviour
     {
         mTextMeshPro.text = "";
 
-        while(mCharacterProgress <= mCurrentString.Length)
+        while(mCharacterProgress < mCurrentString.Length)
         {
             // suspend execution for 5 seconds
             yield return new WaitForSeconds(CHARACTER_TIME);
