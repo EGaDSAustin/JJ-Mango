@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -26,6 +28,12 @@ public class CharacterScript : MonoBehaviour
     //Fling Variables
     public float flingTime = 0;
 
+    public TextMeshProUGUI livesText;
+    public string livesPrefixString;
+
+    private Vector2 initialPlayerPosition;
+    private int lives = 5;
+
     Rigidbody2D rb;
     Animator spriteAnim;
 
@@ -37,6 +45,28 @@ public class CharacterScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteAnim = GetComponentInChildren<Animator>();
         Debug.Log("test");
+        initialPlayerPosition = transform.position;
+
+        if(livesText != null)
+        {
+            livesText.text = livesPrefixString + lives;
+        }
+    }
+
+    public void OnDeath()
+    {
+        transform.position = initialPlayerPosition;
+        lives--;
+
+        if(lives <= 0)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        
+        if (livesText != null)
+        {
+            livesText.text = livesPrefixString + lives;
+        }
     }
 
     // Update is called once per frame

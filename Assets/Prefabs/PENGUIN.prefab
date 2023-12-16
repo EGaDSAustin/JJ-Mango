@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 5958808038941566023}
   m_Layer: 3
   m_Name: PENGUIN
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -466,6 +466,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  followingCamera: {fileID: 0}
   actionMap:
     m_Name: Action Map
     m_Id: fabe5661-e9b6-4251-a8d4-ee54715b1d3f
