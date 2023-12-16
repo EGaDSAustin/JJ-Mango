@@ -8,7 +8,10 @@ public class PlayerScript : CharacterScript
 {
     public bool attackPenguin = false;
     public Image[] keybindImages;
+    public Camera followingCamera;
     public InputActionMap actionMap;
+
+    private Vector2 pastPlayerPosition;
 
     // Start is called before the first frame update
     new void Start()
@@ -56,6 +59,13 @@ public class PlayerScript : CharacterScript
                     activateRoll(true);
             }
         }
+
+        if (followingCamera != null)
+        {
+            followingCamera.transform.position += transform.position - new Vector3(pastPlayerPosition.x, pastPlayerPosition.y, 0);
+        }
+
+        pastPlayerPosition = transform.position;
 
         //Physics Updating
         base.Update();

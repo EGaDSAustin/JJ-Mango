@@ -14,6 +14,8 @@ public class TextBox : MonoBehaviour
 
     private Coroutine mTextScrollingCoroutine;
 
+    public String[] mTextList;
+
     IEnumerator PrintScrolling()
     {
         mTextMeshPro.text = "";
@@ -32,24 +34,38 @@ public class TextBox : MonoBehaviour
     private void SetText(String newTextString)
     {
         mCurrentString = newTextString;
+        mCharacterProgress = 0;
 
-        if(mTextScrollingCoroutine != null)
+        if (mCurrentString.Length <= 0)
         {
-            StopCoroutine(mTextScrollingCoroutine);
-        }
+            GetComponentInChildren<Canvas>().enabled = false;
+        } else
+        {
+            GetComponentInChildren<Canvas>().enabled = true;
 
-        mTextScrollingCoroutine = StartCoroutine("PrintScrolling");
+            if (mTextScrollingCoroutine != null)
+            {
+                StopCoroutine(mTextScrollingCoroutine);
+            }
+
+            mTextScrollingCoroutine = StartCoroutine("PrintScrolling");
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        SetText(mTextMeshPro.text);
+        SetText("");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void onTextAreaEntered(int areaID)
+    {
+        SetText(mTextList[areaID]);
     }
 }

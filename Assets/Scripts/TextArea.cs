@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class DoorTrigger : MonoBehaviour
+public class TextArea : MonoBehaviour
 {
+    public TextBox textBox;
+    public int areaID;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +19,11 @@ public class DoorTrigger : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("BattleScene1");
+            textBox.onTextAreaEntered(areaID);
         }
     }
 }
