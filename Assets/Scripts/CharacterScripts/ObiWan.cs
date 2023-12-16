@@ -14,5 +14,7 @@ public class ObiWan : EnemyScript
     new void Update()
     {
         base.Update();
+
+        //Move based off music timings
     }
 }
