@@ -6,6 +6,7 @@
 [Bb]uilds/
 Logs/
 Assets/AssetStoreTools*
+UserSettings/
 
 .vsconfig
 
