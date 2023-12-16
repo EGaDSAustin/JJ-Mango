@@ -101,6 +101,7 @@ public class CharacterScript : MonoBehaviour
             //Blocking slows movement
             if (blocking)
                 velocity.x *= blockingSpeed;
+            spriteAnim.SetBool("Blocking", blocking);
 
             //Jump
             if (attemptJump && onGround)
@@ -116,7 +117,7 @@ public class CharacterScript : MonoBehaviour
             transform.localScale = new Vector2(normalScale.x * (facingRight ? 1 : -1), normalScale.y);
 
             //Run Animation
-            spriteAnim.SetBool("Moving", movementDir != 0);
+            spriteAnim.SetBool("Moving", Mathf.Abs(movementDir) > .5);
 
             //Applies BALL FORM Force
             rb.AddForce(rollForce);

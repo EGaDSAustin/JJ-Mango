@@ -840,5 +840,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f78e709ca9d7f84d9df35bfc7f0067c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 500
+  strength: 450
   attackBoth: 1
