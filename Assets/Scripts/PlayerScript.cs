@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
             velocity.x *= .9f;
 
         //Jump
-        if (actionMap.actions[1].WasPressedThisFrame() && Physics2D.Raycast(transform.position, Vector2.down * .5f))
+        if (actionMap.actions[1].WasPressedThisFrame() && Physics2D.Raycast(transform.position, Vector2.down, .6f, ~(1 << 3)).collider != null)
             velocity.y = 3;
 
         rb.velocity = velocity;
