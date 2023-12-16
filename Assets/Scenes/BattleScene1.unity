@@ -4478,57 +4478,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 64894681783199158, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 64894681783199158, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 64894681783199158, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 405725904623850350, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: strength
-      value: 350
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721111266688508865, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1721111266688508865, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3052423080406336875, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_Name
       value: PENGUIN
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741823998845220493, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: strength
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 3783838747864190262, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: strength
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3804601355283105805, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3804601355283105805, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680118883705823389, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680118883705823389, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4811268252600547155, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4594,14 +4546,6 @@ PrefabInstance:
       propertyPath: keybindImages.Array.data[4]
       value: 
       objectReference: {fileID: 1272447777}
-    - target: {fileID: 6505487385278266151, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162424322271311776, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

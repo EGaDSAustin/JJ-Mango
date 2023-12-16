@@ -311,19 +311,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811268252600547155, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.66898894
       objectReference: {fileID: 0}
     - target: {fileID: 4811268252600547155, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8993776
       objectReference: {fileID: 0}
     - target: {fileID: 4811268252600547155, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.185
+      value: -5.58
       objectReference: {fileID: 0}
     - target: {fileID: 4811268252600547155, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.99
+      value: -2.653333
       objectReference: {fileID: 0}
     - target: {fileID: 4811268252600547155, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
       propertyPath: m_LocalPosition.z
@@ -522,7 +522,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -547,7 +547,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.422363
+  orthographic size: 3.3167722
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -587,8 +587,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1583396312}
     m_Modifications:
     - target: {fileID: 585824266502727054, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 464.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 585824266502727054, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 71.72955
+      objectReference: {fileID: 0}
+    - target: {fileID: 585824266502727054, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -491
+      value: -135.3
       objectReference: {fileID: 0}
     - target: {fileID: 1082418223642456232, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: mTextList.Array.size
@@ -596,15 +604,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1082418223642456232, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: mTextList.Array.data[0]
-      value: sojldslkfjkljdgsfklgdslj;mg
+      value: Penguin Books Publishing has been lacking sales recently...
       objectReference: {fileID: 0}
     - target: {fileID: 1082418223642456232, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: mTextList.Array.data[1]
-      value: ababcbdfkafklcl;c;lkads;l'dscpl;
+      value: If only there was a way to fight for books for children!
       objectReference: {fileID: 0}
     - target: {fileID: 1082418223642456232, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: mTextList.Array.data[2]
-      value: 0t89710827682762137642516984921
+      value: Wait... I know the perfect way!
       objectReference: {fileID: 0}
     - target: {fileID: 5247196848852529804, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: m_Enabled
@@ -613,6 +621,38 @@ PrefabInstance:
     - target: {fileID: 5501060318285296897, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: m_Name
       value: TextBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807961062713805683, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7384758337267736363, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: m_LocalScale.x
@@ -661,6 +701,18 @@ PrefabInstance:
     - target: {fileID: 7384758337267736363, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131961875604317303, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539779882171083262, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539779882171083262, guid: df2ed3ef356b5c147a6ddabdabb77ad6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1006,7 +1058,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.65, y: 1.87, z: 0}
-  m_LocalScale: {x: 1.4947929, y: 1.11188, z: 1}
+  m_LocalScale: {x: 1.1210947, y: 0.83391, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1627583662}

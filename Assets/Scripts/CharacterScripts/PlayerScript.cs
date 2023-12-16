@@ -59,6 +59,8 @@ public class PlayerScript : CharacterScript
                     activateRoll(true, 1);
             }
         }
+        else if (movementDir != 0)
+            facingRight = movementDir > 0;
 
         if (followingCamera != null)
         {
