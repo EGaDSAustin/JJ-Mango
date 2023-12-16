@@ -53,10 +53,10 @@ public class PlayerScript : CharacterScript
 
                 //Roll Left
                 else if (actionMap.actions[5].WasPressedThisFrame())
-                    activateRoll(false);
+                    activateRoll(false, 1);
                 //Roll Right
                 else if (actionMap.actions[6].WasPressedThisFrame())
-                    activateRoll(true);
+                    activateRoll(true, 1);
             }
         }
 

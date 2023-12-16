@@ -44,7 +44,6 @@ public class CharacterScript : MonoBehaviour
         capsuleSize = GetComponent<CapsuleCollider2D>().size.y / 2 * transform.localScale.y;
         rb = GetComponent<Rigidbody2D>();
         spriteAnim = GetComponentInChildren<Animator>();
-        Debug.Log("test");
         initialPlayerPosition = transform.position;
 
         if(livesText != null)
@@ -148,11 +147,11 @@ public class CharacterScript : MonoBehaviour
         blocking = false;
     }
 
-    protected void activateRoll(bool rollRight)
+    protected void activateRoll(bool rollRight, float force)
     {
         spriteAnim.SetTrigger("Roll");
         cooldown = Time.time + .75f;
-        rollForce = Vector2.right * (rollRight ? 30 : -30);
+        rollForce = Vector2.right * (rollRight ? 30 : -30) * force;
         GetComponent<CapsuleCollider2D>().size = Vector2.one;
         GetComponent<Collider2D>().sharedMaterial = ballPhysics;
         transform.GetChild(3).gameObject.SetActive(true);

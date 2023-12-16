@@ -23,7 +23,7 @@ public class EnemyScript : CharacterScript
     // Update is called once per frame
     new protected void Update()
     {
-        if (defaultMovement)
+        if (defaultMovement && cooldown - .25 < Time.time)
         {
             //Face Player
             facingRight = player.transform.position.x > transform.position.x;

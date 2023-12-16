@@ -100,12 +100,14 @@ public class ObiWan : EnemyScript
 
                 EnemyAttacksDisplay.GetComponent<Animator>().SetTrigger("Play");
                 defaultMovement = false;
+                bool facingRightReset = facingRight;
                 movementDir = facingRight ? 1 : -1;
                 blocking = false;
 
                 //Enact the Attacks + Sounds
                 for (int a = 0; a < 6; a++)
                 {
+                    facingRight = facingRightReset;
                     soundPlayer.clip = attacks[attackBuffer[a % 3]];
                     soundPlayer.Play();
 
@@ -117,8 +119,8 @@ public class ObiWan : EnemyScript
                             case 0: blocking = true; break;
                             case 1: activateStab(); break;
                             case 2: activateSwing(); break;
-                            case 3: activateRoll(!facingRight); break;
-                            case 4: activateRoll(facingRight); break;
+                            case 3: activateRoll(!facingRight, .5f); break;
+                            case 4: activateRoll(facingRight, 1); break;
                         }
                     }
                     yield return new WaitForSeconds(.222f);

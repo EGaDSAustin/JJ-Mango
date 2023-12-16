@@ -13,13 +13,13 @@ public class HitBoxes : MonoBehaviour
         {
             //Calculate Force
             Vector2 pushForce = new Vector2(1, .5f) * strength;
-            if (collision.transform.position.x < transform.position.x)
+            if (collision.transform.position.x < transform.parent.position.x)
                 pushForce.x *= -1;
 
             CharacterScript character = collision.GetComponent<CharacterScript>();
             character.resetAttacks();
             character.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            character.GetComponent<Rigidbody2D>().AddForce(pushForce * (character.blocking ? .66f : 1));
+            character.GetComponent<Rigidbody2D>().AddForce(pushForce * (character.blocking ? .666f : 1));
             character.flingTime = Time.time + strength * .0005f;
 
             //Ball form dangerous to both
@@ -29,7 +29,7 @@ public class HitBoxes : MonoBehaviour
                 character = GetComponentInParent<CharacterScript>();
                 character.resetAttacks();
                 character.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                character.GetComponent<Rigidbody2D>().AddForce(pushForce * (character.blocking ? .66f : 1));
+                character.GetComponent<Rigidbody2D>().AddForce(pushForce * (character.blocking ? .666f : 1));
                 character.flingTime = Time.time + strength * .0005f;
             }
         }    
