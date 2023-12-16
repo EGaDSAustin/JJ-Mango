@@ -21,6 +21,12 @@ public class PlayerScript : CharacterScript
     // Update is called once per frame
     new void Update()
     {
+        //Movement
+        movementDir = actionMap.actions[0].ReadValue<float>();
+
+        attemptJump = actionMap.actions[1].WasPressedThisFrame();
+
+        //Attack Moves (not in library)
         if (attackPenguin)
         {
             //Keybinds to images
@@ -29,24 +35,27 @@ public class PlayerScript : CharacterScript
 
             if (cooldown < Time.time)
             {
+                //Facing Direction if in cooldown
+                if (movementDir != 0)
+                    facingRight = movementDir > 0;
+
                 //Blocking
                 blocking = actionMap.actions[2].ReadValue<float>() > .5;
 
                 //Other Attacks
+                if (actionMap.actions[3].WasPressedThisFrame())
+                    activateStab();
+                else if (actionMap.actions[4].WasPressedThisFrame())
+                    activateSwing();
 
                 //Roll Left
-                if (actionMap.actions[5].WasPressedThisFrame())
+                else if (actionMap.actions[5].WasPressedThisFrame())
                     activateRoll(false);
                 //Roll Right
                 else if (actionMap.actions[6].WasPressedThisFrame())
                     activateRoll(true);
             }
         }
-
-        //Movement
-        movementDir = actionMap.actions[0].ReadValue<float>();
-
-        attemptJump = actionMap.actions[1].WasPressedThisFrame();
 
         //Physics Updating
         base.Update();

@@ -15,6 +15,7 @@ public class CharacterScript : MonoBehaviour
     protected float blockingSpeed = .97f;
     protected float maxSpeed = 4;
     float capsuleSize = .5f;
+    Vector3 normalScale;
 
     //Attacking Vars
     protected float cooldown = 0;
@@ -26,12 +27,16 @@ public class CharacterScript : MonoBehaviour
     public float flingTime = 0;
 
     Rigidbody2D rb;
+    Animator spriteAnim;
 
     // Start is called before the first frame update
     protected void Start()
     {
+        normalScale = transform.localScale;
         capsuleSize = GetComponent<CapsuleCollider2D>().size.y / 2 * transform.localScale.y;
         rb = GetComponent<Rigidbody2D>();
+        spriteAnim = GetComponentInChildren<Animator>();
+        Debug.Log("test");
     }
 
     // Update is called once per frame
@@ -77,11 +82,18 @@ public class CharacterScript : MonoBehaviour
 
             rb.velocity = velocity;
 
+            //Flips direction
+            transform.localScale = new Vector2(normalScale.x * (facingRight ? 1 : -1), normalScale.y);
+
+            //Run Animation
+            spriteAnim.SetBool("Moving", movementDir != 0);
+
             //Applies BALL FORM Force
             rb.AddForce(rollForce);
         }
         else
         {
+            spriteAnim.SetBool("Moving", false);
             //Some force falloff for the fling force
             Vector2 velocity = rb.velocity;
             velocity.x *= .999f;
@@ -91,22 +103,30 @@ public class CharacterScript : MonoBehaviour
 
     protected void activateStab()
     {
-
+        spriteAnim.SetTrigger("Stab");
+        cooldown = Time.time + .5f;
+        transform.GetChild(1).gameObject.SetActive(true);
+        blocking = false;
     }
 
     protected void activateSwing()
     {
-
+        spriteAnim.SetTrigger("Swing");
+        cooldown = Time.time + 1;
+        transform.GetChild(2).gameObject.SetActive(true);
+        blocking = false;
     }
 
     protected void activateRoll(bool rollRight)
     {
+        spriteAnim.SetTrigger("Roll");
         cooldown = Time.time + .75f;
         rollForce = Vector2.right * (rollRight ? 30 : -30);
         GetComponent<CapsuleCollider2D>().size = Vector2.one;
         GetComponent<Collider2D>().sharedMaterial = ballPhysics;
-        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(3).gameObject.SetActive(true);
         blocking = false;
+        facingRight = rollRight;
     }
 
     public void resetAttacks()
@@ -117,8 +137,12 @@ public class CharacterScript : MonoBehaviour
         rollForce = Vector2.zero;
 
         //Disable HitBoxes
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 1; i < transform.childCount; i++)
             transform.GetChild(i).gameObject.SetActive(false);
+
+        spriteAnim.ResetTrigger("Stab");
+        spriteAnim.ResetTrigger("Swing");
+        spriteAnim.ResetTrigger("Roll");
 
         resetAfterCooldown = false;
     }

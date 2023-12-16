@@ -25,6 +25,9 @@ public class EnemyScript : CharacterScript
     {
         if (defaultMovement)
         {
+            //Face Player
+            facingRight = player.transform.position.x > transform.position.x;
+
             //Move Closer if far away
             if (Mathf.Abs(player.transform.position.x - transform.position.x) > 4)
                 movementDir = Mathf.Clamp(player.transform.position.x - transform.position.x, -1, 1);
