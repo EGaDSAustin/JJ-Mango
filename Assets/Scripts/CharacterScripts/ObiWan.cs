@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ObiWan : EnemyScript
 {
-    public Transform EnemyAttacksDisplay;
     public AudioClip mainLoop;
     public AudioClip[] attacks;
 

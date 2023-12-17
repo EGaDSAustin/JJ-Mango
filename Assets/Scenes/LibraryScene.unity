@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: PlayerMaxLives
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7023353210520998923, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
       propertyPath: m_Name
       value: GameManager

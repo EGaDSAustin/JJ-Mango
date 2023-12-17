@@ -6,7 +6,7 @@ public class EnemyScript : CharacterScript
 {
     public bool defaultMovement = true;
     public bool playMusic = false;
-
+    public Transform EnemyAttacksDisplay;
 
     PlayerScript player;
 

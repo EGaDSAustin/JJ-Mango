@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private GameObject AttackCanvasPrefab;
+    [SerializeField] private GameObject EnemeyAttacksPrefab;
     [SerializeField] private int PlayerMaxLives;
     public List<SpawnInfo> Rounds;
     public SpawnInfo LibrarySpawnInfo;
@@ -37,22 +38,23 @@ public class GameManager : MonoBehaviour
 
 
     private void Awake()
-    { 
+    {
+        // Destroy this instance if GameManager already exists
         if (Instance != null && Instance != this) 
         {
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        PlayerLivesLeft = PlayerMaxLives;
-        RoundsCompleted = 0;
+        // Set defaults for persistent data
+        ResetData();
     }
 
     private void OnLevelWasLoaded(int level)
     {
+        // Destroy this instance if GameManager already exists
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -72,26 +74,38 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void ResetData() 
+    {
+        PlayerLivesLeft = PlayerMaxLives;
+        RoundsCompleted = 0;
+        PlayerInstance = null;
+        EnemyInstances.Clear();
+    }
+
     private void GameOver(bool isWinner) 
     {
+        ResetData();
         SceneManager.LoadScene("MainMenu");
     }
 
     private void BattleOver (bool isWinner) 
     {
-        if (isWinner)
-        {
-            RoundsCompleted++;
-            SceneManager.LoadScene("LibraryScene");
-        }
-        else 
+        if (!isWinner)
         {
             PlayerLivesLeft--;
             if (PlayerLivesLeft <= 0)
             {
                 GameOver(false);
+                return;
             }
         }
+        else 
+        {
+            RoundsCompleted++;
+        }
+
+        // Go to library if won or still have lives left after losing
+        SceneManager.LoadScene("LibraryScene");
     }
 
     void AttachAttackImages() 
@@ -112,12 +126,21 @@ public class GameManager : MonoBehaviour
         // Spawn enemies
         EnemySpawnInfo thisEnemy = thisRound.Enemies[0];
         EnemyInstances.Add(Instantiate(thisEnemy.EnemyPrefab, thisEnemy.SpawnPoint, Quaternion.identity));
+        EnemyInstances[0].GetComponent<EnemyScript>().EnemyAttacksDisplay = Instantiate(EnemeyAttacksPrefab).transform;
+
         EnemyInstances[0].GetComponent<EnemyScript>().playMusic = true; // Only have first enemy play their music
+
         for (int i = 1; i < thisRound.Enemies.Count; i++) 
         {
             thisEnemy = thisRound.Enemies[i];
             EnemyInstances.Add(Instantiate(thisEnemy.EnemyPrefab, thisEnemy.SpawnPoint, Quaternion.identity));
+            EnemyInstances[i].GetComponent<EnemyScript>().EnemyAttacksDisplay = Instantiate(EnemeyAttacksPrefab).transform;
         }
+    }
+
+    void SpawnEnemy() 
+    { 
+    
     }
 
     public void LoadCombat() 
