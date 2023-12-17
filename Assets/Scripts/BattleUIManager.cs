@@ -41,9 +41,12 @@ public class BattleUIManager : MonoBehaviour
         if (playerWon)
         {
             Title.text = "You Won!";
+            Title.color = Color.green;
         } else 
         {
             Title.text = "You Lost :(";
+            Title.color = Color.red;
+            VictoryImage.transform.rotation = Quaternion.Euler(0,0,180);
         }
 
         PlayerData.text =   "Lives Left: " + GameManager.Instance.PlayerLivesLeft +
