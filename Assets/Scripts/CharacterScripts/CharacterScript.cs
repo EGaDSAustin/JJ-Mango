@@ -32,7 +32,7 @@ public class CharacterScript : MonoBehaviour
     public string livesPrefixString;
 
     private Vector2 initialPlayerPosition;
-    private int lives = 5;
+    // private int lives = 5;
 
     Rigidbody2D rb;
     Animator spriteAnim;
@@ -46,26 +46,21 @@ public class CharacterScript : MonoBehaviour
         spriteAnim = GetComponentInChildren<Animator>();
         initialPlayerPosition = transform.position;
 
-        if(livesText != null)
+/*        if(livesText != null)
         {
             livesText.text = livesPrefixString + lives;
-        }
+        }*/
     }
 
     public void OnDeath()
     {
         transform.position = initialPlayerPosition;
-        lives--;
-
-        if(lives <= 0)
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
+        // lives--;
         
-        if (livesText != null)
+/*        if (livesText != null)
         {
             livesText.text = livesPrefixString + lives;
-        }
+        }*/
     }
 
     // Update is called once per frame

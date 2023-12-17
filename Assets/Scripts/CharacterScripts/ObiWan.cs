@@ -30,13 +30,17 @@ public class ObiWan : EnemyScript
 
     IEnumerator musicalBattle()
     {
-        //Intro
-        musicPlayer.Play();
-        yield return new WaitUntil(() => !musicPlayer.isPlaying);
-        //yield return new WaitForSeconds(10.681f);
-        musicPlayer.clip = mainLoop;
-        musicPlayer.loop = true;
-        musicPlayer.Play();
+
+        if (playMusic)
+        {
+            //Intro
+            musicPlayer.Play();
+            yield return new WaitUntil(() => !musicPlayer.isPlaying);
+            //yield return new WaitForSeconds(10.681f);
+            musicPlayer.clip = mainLoop;
+            musicPlayer.loop = true;
+            musicPlayer.Play();
+        }
 
         while (true)
         {

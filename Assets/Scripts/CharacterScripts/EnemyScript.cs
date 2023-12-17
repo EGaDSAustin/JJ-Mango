@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyScript : CharacterScript
 {
     public bool defaultMovement = true;
+    public bool playMusic = false;
+
 
     PlayerScript player;
 

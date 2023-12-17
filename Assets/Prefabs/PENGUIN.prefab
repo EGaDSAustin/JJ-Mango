@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f78e709ca9d7f84d9df35bfc7f0067c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 150
+  strength: 400
   attackBoth: 0
 --- !u!1 &2106184907705589761
 GameObject:
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f78e709ca9d7f84d9df35bfc7f0067c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 250
+  strength: 800
   attackBoth: 0
 --- !u!1 &3052423080406336875
 GameObject:
@@ -461,7 +461,7 @@ MonoBehaviour:
   flingTime: 0
   livesText: {fileID: 0}
   livesPrefixString: 
-  attackPenguin: 0
+  attackPenguin: 1
   keybindImages:
   - {fileID: 0}
   - {fileID: 0}
@@ -842,5 +842,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f78e709ca9d7f84d9df35bfc7f0067c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 350
+  strength: 500
   attackBoth: 1

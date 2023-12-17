@@ -44,4 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0299a2cb0a67b7848b29fa89a40de15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackCanvasPrefab: {fileID: 2815191374994500592, guid: 728dda8306d4391459f0d8aa76002862, type: 3}
   PlayerMaxLives: 1
+  Rounds:
+  - PlayerSpawn: {x: -6.5, y: -2}
+    PlayerPrefab: {fileID: 3052423080406336875, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
+    Enemies:
+    - SpawnPoint: {x: 1.5, y: -0.1}
+      EnemyPrefab: {fileID: 6517628075547732358, guid: 5ec723825b41b3b4890b287edc28cf3a, type: 3}
+  - PlayerSpawn: {x: -6.5, y: -2}
+    PlayerPrefab: {fileID: 3052423080406336875, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
+    Enemies:
+    - SpawnPoint: {x: 1.5, y: -0.1}
+      EnemyPrefab: {fileID: 6517628075547732358, guid: 5ec723825b41b3b4890b287edc28cf3a, type: 3}
+    - SpawnPoint: {x: 3, y: 1}
+      EnemyPrefab: {fileID: 6517628075547732358, guid: 5ec723825b41b3b4890b287edc28cf3a, type: 3}
+  LibrarySpawnInfo:
+    PlayerSpawn: {x: 0, y: 0}
+    PlayerPrefab: {fileID: 0}
+    Enemies: []

@@ -21,7 +21,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("BattleScene1");
+            GameManager.Instance.LoadCombat();
         }
     }
 }
