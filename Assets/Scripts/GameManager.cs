@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
         }
 
         // Go to library if won or still have lives left after losing
+        PlayerInstance = null;
+        EnemyInstances.Clear();
         SceneManager.LoadScene("LibraryScene");
     }
 
@@ -136,11 +138,6 @@ public class GameManager : MonoBehaviour
             EnemyInstances.Add(Instantiate(thisEnemy.EnemyPrefab, thisEnemy.SpawnPoint, Quaternion.identity));
             EnemyInstances[i].GetComponent<EnemyScript>().EnemyAttacksDisplay = Instantiate(EnemeyAttacksPrefab).transform;
         }
-    }
-
-    void SpawnEnemy() 
-    { 
-    
     }
 
     public void LoadCombat() 
