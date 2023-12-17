@@ -9,12 +9,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+    // Represents spawn of one enemy
     [Serializable]
     public struct EnemySpawnInfo {
         public Vector2 SpawnPoint;
         public GameObject EnemyPrefab;
     }
 
+    // Represents player and enemy spawns for a round of battle
     [Serializable]
     public struct SpawnInfo {
         public Vector2 PlayerSpawn;
@@ -26,7 +29,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject AttackCanvasPrefab;
     [SerializeField] private GameObject EnemeyAttacksPrefab;
+    [SerializeField] private GameObject EndBattleUI;
     [SerializeField] private int PlayerMaxLives;
+
+    // List the player and enemy spawns for each round
+    // Add a new element in the Unity editor to easily add a new round to the game
     public List<SpawnInfo> Rounds;
     public SpawnInfo LibrarySpawnInfo;
 
@@ -74,6 +81,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Reset persistent data to their default values
     void ResetData() 
     {
         PlayerLivesLeft = PlayerMaxLives;
@@ -84,8 +92,8 @@ public class GameManager : MonoBehaviour
 
     private void GameOver(bool isWinner) 
     {
-        ResetData();
-        SceneManager.LoadScene("MainMenu");
+        UnityEngine.Debug.Log("Game is over. Did the player win?: " + isWinner);
+        LoadMainMenu();
     }
 
     private void BattleOver (bool isWinner) 
@@ -103,11 +111,7 @@ public class GameManager : MonoBehaviour
         {
             RoundsCompleted++;
         }
-
-        // Go to library if won or still have lives left after losing
-        PlayerInstance = null;
-        EnemyInstances.Clear();
-        SceneManager.LoadScene("LibraryScene");
+        Instantiate(EndBattleUI);
     }
 
     void AttachAttackImages() 
@@ -138,6 +142,20 @@ public class GameManager : MonoBehaviour
             EnemyInstances.Add(Instantiate(thisEnemy.EnemyPrefab, thisEnemy.SpawnPoint, Quaternion.identity));
             EnemyInstances[i].GetComponent<EnemyScript>().EnemyAttacksDisplay = Instantiate(EnemeyAttacksPrefab).transform;
         }
+    }
+
+    public void LoadMainMenu()
+    {
+        ResetData();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadLibrary() 
+    {
+        // Go to library if won or still have lives left after losing
+        PlayerInstance = null;
+        EnemyInstances.Clear();
+        SceneManager.LoadScene("LibraryScene");
     }
 
     public void LoadCombat() 

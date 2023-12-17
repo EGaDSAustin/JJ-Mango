@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackCanvasPrefab: {fileID: 2815191374994500592, guid: 728dda8306d4391459f0d8aa76002862, type: 3}
   EnemeyAttacksPrefab: {fileID: 5134831483276180613, guid: ef5a9a9802354434687bdb81f21afc77, type: 3}
+  EndBattleUI: {fileID: 3802740420908025176, guid: 3b2f8fccab7d4524e826bcced6634195, type: 3}
   PlayerMaxLives: 1
   Rounds:
   - PlayerSpawn: {x: -6.5, y: -2}
