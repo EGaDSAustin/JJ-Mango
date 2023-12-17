@@ -36,9 +36,8 @@ public class GameManager : MonoBehaviour
     // Add a new element in the Unity editor to easily add a new round to the game
     public List<SpawnInfo> Rounds;
     public SpawnInfo LibrarySpawnInfo;
-
-    private int PlayerLivesLeft;
-    private int RoundsCompleted;
+    public int PlayerLivesLeft { get; private set; }
+    public int RoundsCompleted { get; private set; }
 
     private GameObject PlayerInstance;
     private List<GameObject> EnemyInstances = new List<GameObject>();
@@ -111,7 +110,9 @@ public class GameManager : MonoBehaviour
         {
             RoundsCompleted++;
         }
-        Instantiate(EndBattleUI);
+        BattleUIManager battleUI = Instantiate(EndBattleUI).GetComponent<BattleUIManager>();
+        battleUI.SetUIElements(isWinner);
+
     }
 
     void AttachAttackImages() 
