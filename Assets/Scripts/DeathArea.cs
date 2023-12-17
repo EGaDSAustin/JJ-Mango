@@ -18,9 +18,9 @@ public class DeathArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.GetComponent<CharacterScript>() != null)
         {
-            collision.GetComponent<CharacterScript>().OnDeath();
+            GameManager.Instance.DestroyCharacter(collision.gameObject);
         }
     }
 }

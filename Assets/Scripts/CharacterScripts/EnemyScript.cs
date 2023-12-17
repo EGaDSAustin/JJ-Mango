@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : CharacterScript
 {
-    protected bool defaultMovement = true;
+    public bool defaultMovement = true;
 
     PlayerScript player;
 
