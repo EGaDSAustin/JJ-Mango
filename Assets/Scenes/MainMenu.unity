@@ -376,6 +376,62 @@ PrefabInstance:
       propertyPath: PlayerMaxLives
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].PlayerPrefab
+      value: 
+      objectReference: {fileID: 3052423080406336875, guid: e8bb8da2b52744f41ad04b2af0ef2106, type: 3}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].PlayerSpawn.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].PlayerSpawn.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[0].EnemyPrefab
+      value: 
+      objectReference: {fileID: 6517628075547732358, guid: 5ec723825b41b3b4890b287edc28cf3a, type: 3}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[1].EnemyPrefab
+      value: 
+      objectReference: {fileID: 6517628075547732358, guid: 5ec723825b41b3b4890b287edc28cf3a, type: 3}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[2].EnemyPrefab
+      value: 
+      objectReference: {fileID: 6517628075547732358, guid: 5ec723825b41b3b4890b287edc28cf3a, type: 3}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[0].SpawnPoint.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[0].SpawnPoint.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[1].SpawnPoint.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[1].SpawnPoint.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[2].SpawnPoint.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: Rounds.Array.data[2].Enemies.Array.data[2].SpawnPoint.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7023353210520998923, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
       propertyPath: m_Name
       value: GameManager
