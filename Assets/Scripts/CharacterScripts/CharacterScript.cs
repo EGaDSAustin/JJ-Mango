@@ -37,6 +37,11 @@ public class CharacterScript : MonoBehaviour
     Rigidbody2D rb;
     Animator spriteAnim;
 
+    private AudioClip stabClip;
+    private AudioClip swingClip;
+    private AudioClip rollClip;
+    private AudioSource sfx;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -45,7 +50,10 @@ public class CharacterScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteAnim = GetComponentInChildren<Animator>();
         initialPlayerPosition = transform.position;
-
+        stabClip = Resources.Load<AudioClip>("stab");
+        swingClip = Resources.Load<AudioClip>("swing");
+        rollClip = Resources.Load<AudioClip>("roll");
+        sfx = GameObject.Find("SFX").GetComponent<AudioSource>();
 /*        if(livesText != null)
         {
             livesText.text = livesPrefixString + lives;
@@ -132,6 +140,7 @@ public class CharacterScript : MonoBehaviour
         cooldown = Time.time + .5f;
         transform.GetChild(1).gameObject.SetActive(true);
         blocking = false;
+        sfx.PlayOneShot(stabClip);
     }
 
     protected void activateSwing()
@@ -140,6 +149,7 @@ public class CharacterScript : MonoBehaviour
         cooldown = Time.time + 1;
         transform.GetChild(2).gameObject.SetActive(true);
         blocking = false;
+        sfx.PlayOneShot(swingClip);
     }
 
     protected void activateRoll(bool rollRight, float force)
@@ -152,6 +162,7 @@ public class CharacterScript : MonoBehaviour
         transform.GetChild(3).gameObject.SetActive(true);
         blocking = false;
         facingRight = rollRight;
+        sfx.PlayOneShot(rollClip);
     }
 
     public void resetAttacks()
