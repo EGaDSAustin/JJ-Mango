@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathArea : MonoBehaviour
 {
+    [SerializeField] private GameObject droplets;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class DeathArea : MonoBehaviour
         if (collision.GetComponent<CharacterScript>() != null)
         {
             GameManager.Instance.DestroyCharacter(collision.gameObject);
+            Destroy(Instantiate(droplets, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity), 2f);
         }
     }
 }

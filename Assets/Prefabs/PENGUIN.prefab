@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 400
   attackBoth: 0
+  droplets: {fileID: 7607407030594077396, guid: 36ff018f9bfef9d49aeccafcb441821f, type: 3}
 --- !u!1 &2106184907705589761
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 800
   attackBoth: 0
+  droplets: {fileID: 7607407030594077396, guid: 36ff018f9bfef9d49aeccafcb441821f, type: 3}
 --- !u!1 &3052423080406336875
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,3 +846,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 500
   attackBoth: 1
+  droplets: {fileID: 7607407030594077396, guid: 36ff018f9bfef9d49aeccafcb441821f, type: 3}
