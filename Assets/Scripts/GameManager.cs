@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -78,6 +77,10 @@ public class GameManager : MonoBehaviour
             PlayerScript playerScript = FindObjectOfType<PlayerScript>();
             if (playerScript != null) PlayerInstance = playerScript.gameObject;
         }
+        foreach (DeathArea death in UnityEngine.Object.FindObjectsOfType<DeathArea>())
+        {
+            death.gameObject.SetActive(true);
+        }
     }
 
     // Reset persistent data to their default values
@@ -112,7 +115,10 @@ public class GameManager : MonoBehaviour
         }
         BattleUIManager battleUI = Instantiate(EndBattleUI).GetComponent<BattleUIManager>();
         battleUI.SetUIElements(isWinner);
-
+        foreach (DeathArea death in UnityEngine.Object.FindObjectsOfType<DeathArea>())
+        {
+            death.gameObject.SetActive(false);
+        }
     }
 
     void AttachAttackImages() 

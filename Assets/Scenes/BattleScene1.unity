@@ -566,6 +566,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3154816468382850747, guid: ccfc3525f2ba23943ae48056d84ba0b2, type: 3}
   m_PrefabInstance: {fileID: 484108419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &484108421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259371651586926264, guid: ccfc3525f2ba23943ae48056d84ba0b2, type: 3}
+  m_PrefabInstance: {fileID: 484108419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &505258721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1146,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3154816468382850747, guid: ccfc3525f2ba23943ae48056d84ba0b2, type: 3}
   m_PrefabInstance: {fileID: 1311414268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1311414270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259371651586926264, guid: ccfc3525f2ba23943ae48056d84ba0b2, type: 3}
+  m_PrefabInstance: {fileID: 1311414268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1337597736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1205,6 +1215,11 @@ PrefabInstance:
 --- !u!4 &1337597737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3154816468382850747, guid: ccfc3525f2ba23943ae48056d84ba0b2, type: 3}
+  m_PrefabInstance: {fileID: 1337597736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1337597738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 259371651586926264, guid: ccfc3525f2ba23943ae48056d84ba0b2, type: 3}
   m_PrefabInstance: {fileID: 1337597736}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1554376674
@@ -1640,6 +1655,22 @@ PrefabInstance:
       propertyPath: Rounds.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: deathAreas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: deathAreas.Array.data[0]
+      value: 
+      objectReference: {fileID: 1337597738}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: deathAreas.Array.data[1]
+      value: 
+      objectReference: {fileID: 484108421}
+    - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
+      propertyPath: deathAreas.Array.data[2]
+      value: 
+      objectReference: {fileID: 1311414270}
     - target: {fileID: 4096108953076863544, guid: 04201f567aa28f94891fa936b18adf0a, type: 3}
       propertyPath: Rounds.Array.data[0].Enemies.Array.size
       value: 1
