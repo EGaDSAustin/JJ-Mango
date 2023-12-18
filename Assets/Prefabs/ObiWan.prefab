@@ -710,7 +710,7 @@ MonoBehaviour:
   defaultMovement: 1
   playMusic: 0
   EnemyAttacksDisplay: {fileID: 0}
-  mainLoop: {fileID: 8300000, guid: 3fc9c67f89d81e548a0189af4652f9fc, type: 3}
+  mainLoop: {fileID: 8300000, guid: 33ef9ec4375305647b4c5e6e5c006184, type: 3}
   attacks:
   - {fileID: 8300000, guid: 11a7b8d4c45ec8642ae9774d4edb0c5b, type: 3}
   - {fileID: 8300000, guid: 422cca325fb4f214ebfd1539edf27beb, type: 3}
